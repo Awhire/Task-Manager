@@ -1,0 +1,19 @@
+<form class="mt-10 border border-red-100 border-solid shadow-lg w-full p-10 space-y-6" (ngSubmit)="update()">
+    <h1>Post Details</h1>
+    <div class="flex justify-between  mx-11 items-center">
+        <label for="title"  class="font-medium">Title</label>
+        <input type="text" name="title" id="title" placeholder="Add Title" [(ngModel)]="task.title"  class="p-2 border border-red-400 border-solid focus:border-red-400"/>
+    </div>
+    <div class="flex justify-between mx-11 items-center">
+        <label for="description" class="font-medium">Description</label>
+        <input type="text" name="description" id="description" placeholder="description" [(ngModel)]="task.description" class="p-2 border border-red-400 border-solid focus:border-red-400" />
+    </div>
+    <div class="flex justify-between  mx-11 items-center">
+        <label for="dueDate"  class="font-medium">Due Date</label>
+        <input placeholder="date" type="text" name="dueDate" id="dueDate" [(ngModel)]="task.dueDate"  class="p-2 border border-red-400 border-solid focus:border-none"/>
+    </div>
+    <div class="flex justify-center items-center mt-10 w-full" >
+        <input type="submit" value="Update" class="bg-orange-500 text-white p-3 w-full rounded-md cursor-pointer">
+    </div>
+    
+</form> 

@@ -1,0 +1,28 @@
+{
+  "tasks": [
+    {
+      "id": "1",
+      "title": "Doctors Appointment",
+      "description": "First treatment",
+      "dueDate": "29 April 2024"
+    },
+    {
+      "id": "2",
+      "title": "Express Yourself",
+      "description": "A way to get bold enough",
+      "dueDate": "1 May 2024"
+    },
+    {
+      "id": "3",
+      "title": "Sport",
+      "description": "Good way to stay fit",
+      "dueDate": "2 May 2024"
+    },
+    {
+      "id": "4",
+      "title": "Orientation Business",
+      "description": "Get a business idea",
+      "dueDate": "5 May 2024"
+    }
+  ]
+}

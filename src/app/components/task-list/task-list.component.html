@@ -1,0 +1,50 @@
+<form class="mt-10 border border-red-100 border-solid shadow-lg w-full p-10 space-y-6" (ngSubmit)="onSubmit()">
+    <div class="flex justify-between  mx-11 items-center">
+        <label for="title"  class="font-medium">Title</label>
+        <input type="text" name="title" id="title" placeholder="Add Title" [(ngModel)]="title"  class="p-2 border border-red-400 border-solid focus:border-red-400"/>
+    </div>
+    <div class="flex justify-between mx-11 items-center">
+        <label for="description" class="font-medium">Description</label>
+        <input type="text" name="description" id="description" placeholder="description" [(ngModel)]="description" class="p-2 border border-red-400 border-solid focus:border-red-400" />
+    </div>
+    <div class="flex justify-between  mx-11 items-center">
+        <label for="dueDate"  class="font-medium">Due Date</label>
+        <input placeholder="date" type="text" name="dueDate" id="dueDate" [(ngModel)]="dueDate"  class="p-2 border border-red-400 border-solid focus:border-none"/>
+    </div>
+    <div class="flex justify-center items-center mt-10 w-full" *ngIf="!isLoading">
+        <input type="submit" value="Add Task" class="bg-orange-500 text-white p-3 w-full rounded-md">
+    </div>
+    
+</form> 
+<br><br>
+
+    <h3 class="text-bold text-2xl text-center text-orange-400">List Of Tasks</h3>
+
+    <div class="overflow-auto rounded-lg shadow">
+    <table class="w-full mb-10">
+        <thead class="bg-gray-50 border-b-2 border-gray-200">
+          <tr>
+            <th class="p-3 text-sm font-semibold tracking-wide text-left">No</th>
+            <th class="p-3 text-sm font-semibold tracking-wide text-left">Title</th>
+            <th class="p-3 text-sm font-semibold tracking-wide text-left">Description</th>
+            <th class="p-3 text-sm font-semibold tracking-wide text-left">Due Date</th>
+            <th class="p-3 text-sm font-semibold tracking-wide text-left">Action</th>
+          </tr>
+        </thead>
+            <tbody *ngFor="let task of tasks; let index = index" class="divide-y divide-gray-100">
+                <tr class="shadow-md hover:bg-slate-50">
+                  <td class="p-3 text-sm text-gray-700 whitespace-nowrap">{{index + 1}}</td>
+                  <td class="p-3 text-sm text-gray-700 whitespace-nowrap">{{ task.title }}</td>
+                  <td class="p-3 text-sm text-gray-700 whitespace-nowrap">{{ task.description }}</td>
+                  <td class="p-3 text-sm text-gray-700 whitespace-nowrap">{{ task.dueDate }}</td>
+                  <td class="p-3 text-sm text-gray-700 whitespace-nowrap flex justify-between">
+                    <button class="text-white bg-green-500 p-2 px-4 rounded-xl" [routerLink]="['/edit', task.id]">Edit</button>
+                      <button class="text-white bg-red-500 p-2 rounded-xl" (click)="onDelete(task)">Delete</button>       
+                  </td>   
+                </tr>
+            </tbody>
+            
+        </table>
+    </div>
+      
+
